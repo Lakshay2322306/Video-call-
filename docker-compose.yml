@@ -1,0 +1,16 @@
+version: '3'
+services:
+  main-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.main
+    environment:
+      - MAIN_BOT_TOKEN=${MAIN_BOT_TOKEN}
+      - INFO_BOT_TOKEN=${INFO_BOT_TOKEN}
+
+  info-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.info
+    environment:
+      - INFO_BOT_TOKEN=${INFO_BOT_TOKEN}

@@ -1,20 +1,11 @@
 version: '3'
 services:
-  main-bot:
+  telegram-bots:
     build:
       context: .
-      dockerfile: Dockerfile.main
+      dockerfile: Dockerfile
     environment:
       - MAIN_BOT_TOKEN=${MAIN_BOT_TOKEN}
       - INFO_BOT_TOKEN=${INFO_BOT_TOKEN}
     ports:
-      - "8080:8080"  # Bind the container's port to Render's port
-
-  info-bot:
-    build:
-      context: .
-      dockerfile: Dockerfile.info
-    environment:
-      - INFO_BOT_TOKEN=${INFO_BOT_TOKEN}
-    ports:
-      - "8081:8080"  # You can use a different port for the info bot
+      - "8080:8080"  # Expose the port to Render

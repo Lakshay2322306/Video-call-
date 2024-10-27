@@ -1,4 +1,4 @@
-# Dockerfile for Info Bot
+# Dockerfile
 FROM python:3.9-slim
 
 # Set working directory
@@ -13,5 +13,5 @@ RUN pip install -r requirements.txt
 # Expose port (default to 8080 for Render)
 EXPOSE 8080
 
-# Run the info bot using Python
-CMD ["python", "info_bot.py"]
+# Run the Flask server
+CMD ["python", "src/server.py"]
